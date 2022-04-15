@@ -15,13 +15,11 @@ const Account = () => {
 
       <SubheaderSection title='My request'>
         <div className={classes.requestContainer}>
-          {mockedAccountRequests.map((request) => {
-            return (
-              <div className={classes.request}>
-                <RequestCard request={request} />
-              </div>
-            );
-          })}
+          {mockedAccountRequests.map((request) => (
+            <div className={classes.card}>
+              <RequestCard request={request} />
+            </div>
+          ))}
         </div>
       </SubheaderSection>
     </div>
