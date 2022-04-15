@@ -3,7 +3,9 @@ import { AccountIcon } from 'uikit/icons/account.icon';
 import { CarIcon } from 'uikit/icons/car.icon';
 import { CheckIcon } from 'uikit/icons/check.icon';
 import { DashboardIcon } from 'uikit/icons/dashboard.icon';
+import { EditIcon } from 'uikit/icons/edit.icons';
 import { PawIcon } from 'uikit/icons/paw.icon';
+import { PencilIcon } from 'uikit/icons/pencil.icon';
 import { SearchIcon } from 'uikit/icons/search.icon';
 import { IconEnum } from '../../types/icons';
 
@@ -14,6 +16,8 @@ export const appIconsMapping: Record<IconEnum, JSX.Element> = {
   [IconEnum.paw]: <PawIcon />,
   [IconEnum.car]: <CarIcon />,
   [IconEnum.check]: <CheckIcon />,
+  [IconEnum.edit]: <EditIcon />,
+  [IconEnum.pencil]: <PencilIcon />,
 };
 
 export const appIconsToRoutesMapping: Partial<Record<IconEnum, string>> = {

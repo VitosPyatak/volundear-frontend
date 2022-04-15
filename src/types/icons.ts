@@ -6,10 +6,12 @@ export type IconSwitchProps = {
 };
 
 export enum IconEnum {
-  dashboard,
-  search,
-  account,
-  paw,
-  car,
-  check,
+  dashboard = 'dashboard',
+  search = 'search',
+  account = 'account',
+  paw = 'paw',
+  car = 'car',
+  check = 'check',
+  edit = 'edit',
+  pencil = 'pencil',
 }

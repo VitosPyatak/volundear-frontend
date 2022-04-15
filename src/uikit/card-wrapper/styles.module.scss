@@ -12,3 +12,9 @@
   gap: 0.5rem;
   cursor: pointer;
 }
+
+.container:hover {
+  box-shadow: 0 12px 28px -5px rgba(0, 0, 0, 0.13);
+  transition: all 0.3s;
+  transform: translateZ(10px);
+}

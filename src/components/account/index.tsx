@@ -4,4 +4,4 @@ const Account = () => {
   return <div>Account</div>;
 };
 
-export default withHeading(Account, 'My account');
+export default withHeading(Account, { heading: 'My account' });

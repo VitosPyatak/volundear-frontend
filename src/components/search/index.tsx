@@ -4,4 +4,4 @@ const Search = () => {
   return <div>Search</div>;
 };
 
-export default withHeading(Search, 'Search results');
+export default withHeading(Search, { heading: 'Search results' });

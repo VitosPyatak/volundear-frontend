@@ -1,6 +1,5 @@
 import { RequestCard } from 'components/request-card';
 import { withHeading } from 'hoc/with-heading';
-import { CardWrapper } from 'uikit/card-wrapper';
 import { mockedRequests } from './mock';
 import classes from './styles.module.scss';
 
@@ -18,4 +17,4 @@ const Home = () => {
   );
 };
 
-export default withHeading(Home, 'Requests');
+export default withHeading(Home, { heading: 'Requests', withFloatingAction: true });
