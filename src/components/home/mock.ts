@@ -1,5 +1,6 @@
 import { RequestModel } from 'models/request';
 import { UserModel } from 'models/user';
+import { nanoid } from 'nanoid';
 import { VolunteerRequestCategory } from 'types/volunteer-request-category';
 import { VolunteerRequestStatus } from 'types/volunteer-request-status';
 
@@ -14,6 +15,7 @@ export const mockUser: UserModel = {
 };
 
 export const mockRequest: RequestModel = {
+  _id: nanoid(),
   title: 'Title',
   description: 'Description text...',
   status: VolunteerRequestStatus.active,

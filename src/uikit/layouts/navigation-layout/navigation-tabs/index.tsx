@@ -4,20 +4,21 @@ import { IconEnum } from 'types/icons';
 import { useNavigate } from 'react-router-dom';
 import { appIconsToRoutesMapping } from 'uikit/icon-switch/configs';
 import { appRoutes } from 'configs/routes';
+import { getCurrentTabFromStorage, setCurrentTabToStorage } from 'storage';
 
 export const NavigationTabs = () => {
   const [selectedTab, setSelectedTab] = useState(IconEnum.dashboard);
   const navigate = useNavigate();
 
   const updateSelectedTab = (tabId: IconEnum) => {
-    if (tabId != selectedTab) {
-      setSelectedTab(tabId);
-      navigate(appIconsToRoutesMapping[tabId] || appRoutes.home);
-    }
+    setSelectedTab(tabId);
+    setCurrentTabToStorage(tabId);
+    navigate(appIconsToRoutesMapping[tabId] || appRoutes.home);
   };
 
   useEffect(() => {
-    navigate(appRoutes.home);
+    const tab = getCurrentTabFromStorage();
+    if (tab) setSelectedTab(tab);
   }, []);
 
   return (

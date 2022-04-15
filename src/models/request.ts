@@ -3,6 +3,7 @@ import { VolunteerRequestStatus } from 'types/volunteer-request-status';
 import { UserModel } from './user';
 
 export type RequestModel<User = UserModel, Assignee = UserModel> = {
+  _id: string;
   title: string;
   description: string;
   status: VolunteerRequestStatus;

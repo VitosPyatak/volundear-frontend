@@ -18,7 +18,7 @@ export const UserSearchCard: FC<UserCardProps> = ({ user }) => {
         <CardDescription title={user.description} />
       </div>
       <div className={classes.button}>
-        <SimpleButton title='See profile' />
+        <SimpleButton onClick={() => {}} title='See profile' />
       </div>
     </CardWrapper>
   );

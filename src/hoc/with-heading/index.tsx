@@ -1,14 +1,13 @@
 import { ComponentType } from 'react';
-import { FloatingActionButton } from 'uikit/floating-action-button';
-import classes from './styles.module.scss';
+import { useNavigate } from 'react-router-dom';
+
+import { Heading } from 'uikit/heading';
 import { WithHeadingProps } from './types';
 
-export const withHeading = (Component: ComponentType, { heading, withFloatingAction }: WithHeadingProps) => {
+export const withHeading = (Component: ComponentType, props: WithHeadingProps) => {
   return (
-    <div className={classes.container}>
-      <span className={classes.heading}>{heading}</span>
+    <Heading {...props}>
       <Component />
-      {withFloatingAction && <FloatingActionButton />}
-    </div>
+    </Heading>
   );
 };
