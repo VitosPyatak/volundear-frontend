@@ -13,7 +13,7 @@ export const mockUser: UserModel = {
   isVerified: true,
 };
 
-const request: RequestModel = {
+export const mockRequest: RequestModel = {
   title: 'Title',
   description: 'Description text...',
   status: VolunteerRequestStatus.active,
@@ -22,4 +22,4 @@ const request: RequestModel = {
   assignees: [],
 };
 
-export const mockedRequests: RequestModel[] = new Array(8).fill(request);
+export const mockedRequests: RequestModel[] = new Array(8).fill(mockRequest);
