@@ -1,0 +1,22 @@
+@import 'variables';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.selectedContainer {
+  @extend .container;
+  background-color: $accent;
+}
+
+.iconWrapper {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
