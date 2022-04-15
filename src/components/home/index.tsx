@@ -1,18 +1,9 @@
-import { RequestCard } from 'components/request-card';
+import { mockedAccountRequests } from 'components/account/mock';
+import { Requests } from 'components/requests';
 import { withHeading } from 'hoc/with-heading';
-import { mockedRequests } from './mock';
-import classes from './styles.module.scss';
 
 const Home = () => {
-  return (
-    <div className={classes.container}>
-      {mockedRequests.map((request) => (
-        <div className={classes.card}>
-          <RequestCard request={request} />
-        </div>
-      ))}
-    </div>
-  );
+  return <Requests requests={mockedAccountRequests} />;
 };
 
 export default withHeading(Home, { heading: 'Requests', withFloatingAction: true });
