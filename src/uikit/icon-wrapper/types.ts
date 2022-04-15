@@ -1,4 +1,4 @@
-import { IconEnum, IconSwitchProps } from 'uikit/icon-switch/types';
+import { IconEnum, IconSwitchProps } from 'types/icons';
 
 export type IconWrapperProps = {
   isSelected: boolean;

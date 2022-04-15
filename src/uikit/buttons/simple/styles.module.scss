@@ -1,0 +1,16 @@
+@import 'variables';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $accent;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.title {
+  color: white;
+  font-size: 0.9rem;
+}

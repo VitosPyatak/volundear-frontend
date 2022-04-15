@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { IconSwitch } from 'uikit/icon-switch';
-import { IconEnum } from 'uikit/icon-switch/types';
+import { IconEnum } from 'types/icons';
 
 export const NavigationTabs = () => {
   const [selectedTab, setSelectedTab] = useState(IconEnum.dashboard);

@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { IconWrapper } from 'uikit/icon-wrapper';
 import { appIconsMapping } from './configs';
 import classes from './styles.module.scss';
-import { IconEnum, IconSwitchProps } from './types';
+import { IconEnum, IconSwitchProps } from '../../types/icons';
 
 export const IconSwitch: FC<IconSwitchProps> = ({ selectedIconId, setSelectedIcon, icons, withRedirect }) => {
   const createWrapperProps = (iconId: IconEnum) => {

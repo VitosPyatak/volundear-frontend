@@ -1,13 +1,19 @@
 import { appRoutes } from 'configs/routes';
 import { AccountIcon } from 'uikit/icons/account.icon';
+import { CarIcon } from 'uikit/icons/car.icon';
+import { CheckIcon } from 'uikit/icons/check.icon';
 import { DashboardIcon } from 'uikit/icons/dashboard.icon';
+import { PawIcon } from 'uikit/icons/paw.icon';
 import { SearchIcon } from 'uikit/icons/search.icon';
-import { IconEnum } from './types';
+import { IconEnum } from '../../types/icons';
 
 export const appIconsMapping: Record<IconEnum, JSX.Element> = {
   [IconEnum.account]: <AccountIcon />,
   [IconEnum.dashboard]: <DashboardIcon />,
   [IconEnum.search]: <SearchIcon />,
+  [IconEnum.paw]: <PawIcon />,
+  [IconEnum.car]: <CarIcon />,
+  [IconEnum.check]: <CheckIcon />,
 };
 
 export const appIconsToRoutesMapping: Partial<Record<IconEnum, string>> = {

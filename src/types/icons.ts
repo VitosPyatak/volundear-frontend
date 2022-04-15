@@ -9,4 +9,7 @@ export enum IconEnum {
   dashboard,
   search,
   account,
+  paw,
+  car,
+  check,
 }
