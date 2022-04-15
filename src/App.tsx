@@ -10,9 +10,9 @@ export const App = () => {
     <Router>
       <NavigationLayout>
         <Routes>
-          <Route path={appRoutes.home} element={<Home />} />
-          <Route path={appRoutes.account} element={<Account />} />
-          <Route path={appRoutes.search} element={<Search />} />
+          <Route path={appRoutes.home} element={Home} />
+          <Route path={appRoutes.account} element={Account} />
+          <Route path={appRoutes.search} element={Search} />
         </Routes>
       </NavigationLayout>
     </Router>

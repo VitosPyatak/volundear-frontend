@@ -1,5 +1,7 @@
-export const Account = () => {
+import { withHeading } from 'hoc/with-heading';
+
+const Account = () => {
   return <div>Account</div>;
 };
 
-export default Account;
+export default withHeading(Account, 'My account');

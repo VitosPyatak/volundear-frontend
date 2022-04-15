@@ -1,5 +1,7 @@
-export const Home = () => {
-    return <div>Home</div>;
+import { withHeading } from 'hoc/with-heading';
+
+const Home = () => {
+  return <div>Home</div>;
 };
 
-export default Home;
+export default withHeading(Home, 'Requests');
