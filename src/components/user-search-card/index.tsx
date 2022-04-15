@@ -1,4 +1,5 @@
 import { UserCardProps } from 'components/user-card/types';
+import { Size } from 'configs/size.types';
 import { FC } from 'react';
 import { IconEnum } from 'types/icons';
 import { SimpleButton } from 'uikit/buttons/simple';
@@ -12,7 +13,7 @@ import classes from './styles.module.scss';
 export const UserSearchCard: FC<UserCardProps> = ({ user }) => {
   return (
     <CardWrapper horizontal>
-      <CardImage small url={user.profilePicture} />
+      <CardImage size={Size.medium} url={user.profilePicture} />
       <div className={classes.infoContainer}>
         <CardTitle title={formatUsername(user)} icon={IconEnum.verified} />
         <CardDescription title={user.description} />

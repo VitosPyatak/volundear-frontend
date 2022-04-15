@@ -16,7 +16,7 @@ export const UserCard: FC<UserCardProps> = ({ user }) => {
     <CardWrapper largePadding>
       <div className={classes.container}>
         <div className={classes.imageContainer}>
-          <CardImage url={user.profilePicture} />
+          <CardImage size={Size.large} url={user.profilePicture} />
           <EditIcon />
         </div>
 
