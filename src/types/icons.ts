@@ -13,4 +13,5 @@ export enum IconEnum {
   check = 'check',
   edit = 'edit',
   pencil = 'pencil',
+  verified = 'verified',
 }

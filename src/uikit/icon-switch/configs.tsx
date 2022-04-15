@@ -7,6 +7,7 @@ import { EditIcon } from 'uikit/icons/edit.icons';
 import { PawIcon } from 'uikit/icons/paw.icon';
 import { PencilIcon } from 'uikit/icons/pencil.icon';
 import { SearchIcon } from 'uikit/icons/search.icon';
+import { VerifiedIcon } from 'uikit/icons/verified.icon';
 import { IconEnum } from '../../types/icons';
 
 export const appIconsMapping: Record<IconEnum, JSX.Element> = {
@@ -18,6 +19,7 @@ export const appIconsMapping: Record<IconEnum, JSX.Element> = {
   [IconEnum.check]: <CheckIcon />,
   [IconEnum.edit]: <EditIcon />,
   [IconEnum.pencil]: <PencilIcon />,
+  [IconEnum.verified]: <VerifiedIcon />,
 };
 
 export const appIconsToRoutesMapping: Partial<Record<IconEnum, string>> = {

@@ -1,6 +1,11 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .small {
   font-weight: 600;
-  
   font-size: 1.1rem;
 }
 
