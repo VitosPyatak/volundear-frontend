@@ -13,8 +13,21 @@
   cursor: pointer;
 }
 
-.container:hover {
+.largePadding {
+  @extend .container;
+  padding: 2rem 2.5rem;
+}
+
+.hover {
   box-shadow: 0 12px 28px -5px rgba(0, 0, 0, 0.13);
   transition: all 0.3s;
   transform: translateZ(10px);
+}
+
+.container:hover {
+  @extend .hover;
+}
+
+.largePadding:hover {
+  @extend .hover;
 }

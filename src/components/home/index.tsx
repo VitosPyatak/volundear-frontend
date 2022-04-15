@@ -5,14 +5,12 @@ import classes from './styles.module.scss';
 
 const Home = () => {
   return (
-    <div className={classes.wrapper}>
-      <div className={classes.container}>
-        {mockedRequests.map((request) => (
-          <div className={classes.card}>
-            <RequestCard request={request} />
-          </div>
-        ))}
-      </div>
+    <div className={classes.container}>
+      {mockedRequests.map((request) => (
+        <div className={classes.card}>
+          <RequestCard request={request} />
+        </div>
+      ))}
     </div>
   );
 };

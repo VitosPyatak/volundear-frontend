@@ -2,11 +2,18 @@ import { FC } from 'react';
 import classes from './styles.module.scss';
 import { CreatedByProps } from './types';
 
-export const SuperimposedSubtitle: FC<CreatedByProps> = ({ title, subtitle }) => {
+export const SuperimposedSubtitle: FC<CreatedByProps> = ({ title, subtitle, large, horizontal }) => {
+  const containerClass = horizontal ? classes.horizontal : classes.container;
+  const subtitleClass = large ? classes.largeSubtitle : classes.subtitle;
+  const titleClass = large ? classes.largeTitle : classes.title;
+
   return (
-    <div className={classes.container}>
-      <span className={classes.subtitle}>{subtitle}</span>
-      <span className={classes.title}>{title}</span>
+    <div className={containerClass}>
+      <span className={subtitleClass}>
+        {subtitle}
+        {horizontal && ':'}
+      </span>
+      <span className={titleClass}>{title}</span>
     </div>
   );
 };

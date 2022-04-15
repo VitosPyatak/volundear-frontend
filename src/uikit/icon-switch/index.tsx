@@ -4,10 +4,10 @@ import { appIconsMapping } from './configs';
 import classes from './styles.module.scss';
 import { IconEnum, IconSwitchProps } from '../../types/icons';
 
-export const IconSwitch: FC<IconSwitchProps> = ({ selectedIconId, setSelectedIcon, icons, withRedirect }) => {
+export const IconSwitch: FC<IconSwitchProps> = ({ selectedIconId, setSelectedIcon, icons }) => {
   const createWrapperProps = (iconId: IconEnum) => {
     const isSelected = iconId === selectedIconId;
-    return { setSelectedIcon, iconId, isSelected, withRedirect };
+    return { setSelectedIcon, iconId, isSelected };
   };
 
   return (
