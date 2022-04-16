@@ -5,7 +5,7 @@ export const mockRequestId = '625555309b0c6a35176c4e7a';
 
 export const mockSenderId = '62554edf9b0c6a35176c4e79';
 
-export const createCommentWithoutId = (text: string): Partial<CommentModel> => ({
+export const createCommentWithoutId = (text: string): Partial<CommentModel<string>> => ({
   text,
   sender: mockSenderId,
   request: mockRequestId,

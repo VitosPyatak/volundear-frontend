@@ -1,7 +1,9 @@
-export type CommentModel = {
+import { UserModel } from './user';
+
+export type CommentModel<U = UserModel> = {
   _id: string;
   text: string;
-  sender: string;
+  sender: U;
   request: string;
 };
 

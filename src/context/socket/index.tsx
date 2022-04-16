@@ -11,8 +11,8 @@ export const useSockets = () => useContext(SocketContext);
 
 export const SocketProvider = ({ children }: SocketProviderProps) => {
   const socket = io(`${appVariables.apiUrl}/comments`);
-  
-  const sendComment = (comment: Partial<CommentModel>) => {
+
+  const sendComment = (comment: Partial<CommentModel<string>>) => {
     socket.emit(wsEventNames.comments, comment);
   };
 
