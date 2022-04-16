@@ -15,3 +15,8 @@
   color: $accent-button;
   font-size: 0.9rem;
 }
+
+.largeTitle {
+  @extend .title;
+  font-size: 1.1rem;
+}

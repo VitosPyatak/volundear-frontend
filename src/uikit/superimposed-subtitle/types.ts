@@ -1,6 +1,6 @@
 export type CreatedByProps = {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   large?: boolean;
   horizontal?: boolean;
 };

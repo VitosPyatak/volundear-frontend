@@ -1,0 +1,18 @@
+.requestDataContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dateAndOwnerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.2rem 0;
+}

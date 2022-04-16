@@ -4,7 +4,6 @@ import { withHeading } from 'hoc/with-heading';
 import { FC } from 'react';
 import { mockExtendedRequest } from './mock';
 import classes from './styles.module.scss';
-import { ExtendedRequestProps } from './types';
 
 const ExtendedRequest: FC = () => {
   return (
