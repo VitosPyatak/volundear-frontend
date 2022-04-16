@@ -1,0 +1,18 @@
+@import 'variables';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 0.6rem;
+  cursor: pointer;
+  height: fit-content;
+  border: 2px solid $accent;
+  gap: 0.2rem;
+}
+
+.title {
+  color: $accent-button;
+  font-size: 0.9rem;
+}

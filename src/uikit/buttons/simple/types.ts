@@ -1,5 +1,5 @@
 export type SimpleButtonProps = {
   title: string;
-  onClick: VoidFunction;
+  onClick?: VoidFunction;
   large?: boolean;
 };

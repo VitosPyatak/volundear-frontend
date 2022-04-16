@@ -6,6 +6,8 @@ import classes from './styles.module.scss';
 import { SuperimposedSubtitle } from 'uikit/superimposed-subtitle';
 import { formatUsername } from 'utils/formatUsername';
 import { SimpleButton } from 'uikit/buttons/simple';
+import { OutlinedIconsSwitch } from 'uikit/outlined-icons-switch';
+import { IconEnum } from 'types/icons';
 
 export const ExtendedRequestCard: FC<ExtendedRequestCardProps> = ({ request }) => {
   return (
@@ -16,6 +18,7 @@ export const ExtendedRequestCard: FC<ExtendedRequestCardProps> = ({ request }) =
           <SuperimposedSubtitle title={formatUsername(request.owner)} subtitle='Created by' horizontal large />
           <SuperimposedSubtitle title={'16.04.22'} subtitle='Date' horizontal large />
         </div>
+        <OutlinedIconsSwitch icons={[IconEnum.paw, IconEnum.check]} />
       </div>
 
       <SuperimposedSubtitle large title={request.description} />

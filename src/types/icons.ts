@@ -15,3 +15,15 @@ export enum IconEnum {
   pencil = 'pencil',
   verified = 'verified',
 }
+
+export const iconsTitleMapping: Record<IconEnum, string> = {
+  dashboard: 'Home',
+  search: 'Search',
+  account: 'Account',
+  paw: 'Animals',
+  car: 'Transportation',
+  check: 'Done',
+  edit: 'Edit',
+  pencil: 'Create',
+  verified: 'Verified',
+};
