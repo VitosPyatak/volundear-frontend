@@ -1,4 +1,5 @@
-import { cloneElement, FC, useMemo } from 'react';
+import { useSearch } from 'context/search';
+import { ChangeEventHandler, cloneElement, FC, useMemo } from 'react';
 import { IconType } from 'types/icons';
 import { appIconsMapping } from 'uikit/icon-switch/configs';
 import classes from './styles.module.scss';
@@ -9,11 +10,23 @@ const DefaultIcon: FC<WrappedIconProps> = ({ isSelected, iconId }) => {
 };
 
 const SearchIcon: FC<WrappedIconProps> = ({ iconId, isSelected }) => {
+  const { input, setInput } = useSearch();
+
   const icon = cloneElement(appIconsMapping[iconId]);
+
+  const onInputChange: ChangeEventHandler<HTMLInputElement> = (event) => {
+    setInput(event.target.value);
+  };
 
   return isSelected ? (
     <div className={classes.inputContainer}>
-      <input className={classes.input} placeholder='Search volunteers and requests...'/>
+      <input
+        value={input}
+        onChange={onInputChange}
+        autoFocus
+        className={classes.input}
+        placeholder='Search volunteers and requests...'
+      />
       {icon}
     </div>
   ) : (

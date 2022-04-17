@@ -1,14 +1,14 @@
 import { mockRequestId } from 'components/chat/configs';
 import { useSockets } from 'context/socket';
 import { CommentModel } from 'models/comment';
-import { createContext, useContext, useEffect, useState } from 'react';
-import { CommentsContextType, CommentsProviderProps } from './types';
+import { createContext, FC, useContext, useEffect, useState } from 'react';
+import { CommentsContextType } from './types';
 
 export const CommentsContext = createContext<CommentsContextType>(null as any);
 
 export const useComments = () => useContext(CommentsContext);
 
-export const CommentsProvider = ({ children }: CommentsProviderProps) => {
+export const CommentsProvider: FC = ({ children }) => {
   const [comments, setComments] = useState<CommentModel[]>([]);
 
   const { registerCommentsHandler, joinRoom } = useSockets();

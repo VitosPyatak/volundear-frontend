@@ -5,7 +5,3 @@ export type CommentsContextType = {
   comments: CommentModel[];
   updateComments: (comment: CommentModel) => void;
 };
-
-export type CommentsProviderProps = {
-  children: Children;
-};

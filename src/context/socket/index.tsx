@@ -1,15 +1,15 @@
 import { appVariables } from 'configs';
 import { CommentCallback, CommentModel } from 'models/comment';
-import { createContext, useContext } from 'react';
+import { createContext, FC, useContext } from 'react';
 import { io } from 'socket.io-client';
 import { wsEventNames } from './configs';
-import { ScoketContextType, SocketProviderProps } from './types';
+import { ScoketContextType } from './types';
 
 export const SocketContext = createContext<ScoketContextType>(null as any);
 
 export const useSockets = () => useContext(SocketContext);
 
-export const SocketProvider = ({ children }: SocketProviderProps) => {
+export const SocketProvider: FC = ({ children }) => {
   const socket = io(`${appVariables.apiUrl}/comments`);
 
   const sendComment = (comment: Partial<CommentModel<string>>) => {

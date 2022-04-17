@@ -8,7 +8,3 @@ export type ScoketContextType = {
   joinRoom: (request: string) => void;
   socket: Socket;
 };
-
-export type SocketProviderProps = {
-  children: Children;
-};

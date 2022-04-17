@@ -1,5 +1,6 @@
 import { UserCardProps } from 'components/user-card/types';
 import { Size } from 'configs/size.types';
+import { useSearch } from 'context/search';
 import { FC } from 'react';
 import { IconEnum } from 'types/icons';
 import { SimpleButton } from 'uikit/buttons/simple';
@@ -11,6 +12,8 @@ import { formatUsername } from 'utils/formatUsername';
 import classes from './styles.module.scss';
 
 export const UserSearchCard: FC<UserCardProps> = ({ user }) => {
+  const { input } = useSearch();
+
   return (
     <CardWrapper horizontal>
       <CardImage size={Size.medium} url={user.profilePicture} />

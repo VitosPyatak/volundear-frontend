@@ -4,11 +4,14 @@ import './index.css';
 import App from './app';
 import reportWebVitals from './reportWebVitals';
 import { SocketProvider } from 'context/socket';
+import { SearchProvider } from 'context/search';
 
 ReactDOM.render(
   <React.StrictMode>
     <SocketProvider>
-      <App />
+      <SearchProvider>
+        <App />
+      </SearchProvider>
     </SocketProvider>
   </React.StrictMode>,
   document.getElementById('root')
