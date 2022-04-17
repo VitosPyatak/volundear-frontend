@@ -27,3 +27,7 @@ export const iconsTitleMapping: Record<IconEnum, string> = {
   pencil: 'Create',
   verified: 'Verified',
 };
+
+export enum IconType {
+  search,
+}
