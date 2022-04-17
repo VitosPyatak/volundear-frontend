@@ -6,7 +6,7 @@ import { RequestsProps } from './types';
 export const Requests: FC<RequestsProps> = ({ requests }) => {
   return (
     <div className={classes.container}>
-      {requests.map((request) => (
+      {requests?.map((request) => (
         <div className={classes.card}>
           <RequestCard request={request} />
         </div>

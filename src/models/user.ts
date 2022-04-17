@@ -1,3 +1,5 @@
+import { RequestModel } from './request';
+
 export type UserModel = {
   _id: string;
   firstname: string;
@@ -6,4 +8,6 @@ export type UserModel = {
   phoneNumber: string;
   profilePicture: string;
   isVerified: boolean;
+  // TODO: make separate request for requests
+  requests: RequestModel[];
 };

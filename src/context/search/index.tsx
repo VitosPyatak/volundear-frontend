@@ -1,4 +1,4 @@
-import { searchHttpProvider } from 'api/search-provider';
+import { userRequestHttpProvider } from 'api/search-provider';
 import { RequestModel } from 'models/request';
 import { UserModel } from 'models/user';
 import { createContext, FC, useContext, useState } from 'react';
@@ -15,7 +15,7 @@ export const SearchProvider: FC = ({ children }) => {
   const [requests, setSearchRequests] = useState<RequestModel[]>([]);
 
   const processSearch = (searchInput: string) => {
-    searchHttpProvider.search(searchInput).then((response) => {
+    userRequestHttpProvider.search(searchInput).then((response) => {
       setSearchRequests(response.requests);
       setSearchUsers(response.users);
     });

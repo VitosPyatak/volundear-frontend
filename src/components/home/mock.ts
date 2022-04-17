@@ -13,6 +13,7 @@ export const mockUser: UserModel = {
   phoneNumber: '380961720000',
   profilePicture: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/3c256e58872685.5a0c7b8939f42.png',
   isVerified: true,
+  requests: [],
 };
 
 export const mockRequest: RequestModel = {
