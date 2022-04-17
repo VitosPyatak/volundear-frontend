@@ -1,4 +1,5 @@
 export type UserModel = {
+  _id: string;
   firstname: string;
   lastname: string;
   description: string;

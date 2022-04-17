@@ -10,19 +10,19 @@ const DefaultIcon: FC<WrappedIconProps> = ({ isSelected, iconId }) => {
 };
 
 const SearchIcon: FC<WrappedIconProps> = ({ iconId, isSelected }) => {
-  const { input, setInput } = useSearch();
+  const { input, onInputChange } = useSearch();
 
   const icon = cloneElement(appIconsMapping[iconId]);
 
-  const onInputChange: ChangeEventHandler<HTMLInputElement> = (event) => {
-    setInput(event.target.value);
+  const onChange: ChangeEventHandler<HTMLInputElement> = (event) => {
+    onInputChange(event.target.value);
   };
 
   return isSelected ? (
     <div className={classes.inputContainer}>
       <input
         value={input}
-        onChange={onInputChange}
+        onChange={onChange}
         autoFocus
         className={classes.input}
         placeholder='Search volunteers and requests...'

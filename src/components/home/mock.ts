@@ -5,6 +5,7 @@ import { VolunteerRequestCategory } from 'types/volunteer-request-category';
 import { VolunteerRequestStatus } from 'types/volunteer-request-status';
 
 export const mockUser: UserModel = {
+  _id: 'asd',
   firstname: 'Victor',
   lastname: 'Pyatak',
   description:

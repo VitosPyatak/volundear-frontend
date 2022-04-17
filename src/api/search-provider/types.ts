@@ -1,9 +1,7 @@
 import { RequestModel } from 'models/request';
 import { UserModel } from 'models/user';
 
-export type SearchContextType = {
-  input: string;
-  onInputChange: (input: string) => void;
+export type UserRequestSearchDTO = {
   users: UserModel[];
   requests: RequestModel[];
 };

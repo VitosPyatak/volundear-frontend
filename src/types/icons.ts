@@ -14,6 +14,7 @@ export enum IconEnum {
   edit = 'edit',
   pencil = 'pencil',
   verified = 'verified',
+  unverified = 'unverified',
 }
 
 export const iconsTitleMapping: Record<IconEnum, string> = {
@@ -26,6 +27,7 @@ export const iconsTitleMapping: Record<IconEnum, string> = {
   edit: 'Edit',
   pencil: 'Create',
   verified: 'Verified',
+  unverified: 'Unverified',
 };
 
 export enum IconType {
