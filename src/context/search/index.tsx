@@ -28,6 +28,12 @@ export const SearchProvider: FC = ({ children }) => {
     if (input) searchHandler(input);
   };
 
+  const reset = () => {
+    setInput('');
+    setSearchRequests([]);
+    setSearchUsers([]);
+  };
+
   return (
     <SearchContext.Provider
       value={{
@@ -35,6 +41,7 @@ export const SearchProvider: FC = ({ children }) => {
         onInputChange,
         users,
         requests,
+        reset,
       }}
     >
       {children}

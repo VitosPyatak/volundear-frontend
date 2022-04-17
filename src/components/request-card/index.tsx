@@ -9,6 +9,7 @@ import { SuperimposedSubtitle } from '../../uikit/superimposed-subtitle';
 import { formatUsername } from 'utils/formatUsername';
 import { mockedDate } from './mock';
 import { RequestCardIcons } from './request-card-icons';
+import { formatRequestDate } from 'utils/formatRequestDate';
 
 export const RequestCard: FC<RequestCardProps> = ({ request, size }) => {
   return (
@@ -19,7 +20,7 @@ export const RequestCard: FC<RequestCardProps> = ({ request, size }) => {
 
       <div className={classes.subinfoContainer}>
         <SuperimposedSubtitle subtitle='Created by' title={formatUsername(request.owner)} />
-        <SuperimposedSubtitle subtitle='Date' title={mockedDate} />
+        <SuperimposedSubtitle subtitle='Date' title={formatRequestDate(request.createdAt)} />
       </div>
 
       <div className={classes.subinfoContainer}>

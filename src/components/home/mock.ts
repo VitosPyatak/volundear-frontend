@@ -23,6 +23,7 @@ export const mockRequest: RequestModel = {
   category: VolunteerRequestCategory.military,
   owner: mockUser,
   assignees: [],
+  createdAt: new Date().toString(),
 };
 
 export const mockedRequests: RequestModel[] = new Array(8).fill(mockRequest);

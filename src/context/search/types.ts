@@ -6,4 +6,5 @@ export type SearchContextType = {
   onInputChange: (input: string) => void;
   users: UserModel[];
   requests: RequestModel[];
+  reset: VoidFunction;
 };

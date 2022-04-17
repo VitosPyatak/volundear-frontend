@@ -10,4 +10,5 @@ export type RequestModel<User = UserModel, Assignee = UserModel> = {
   category: VolunteerRequestCategory;
   owner: User;
   assignees: Assignee[];
+  createdAt: string;
 };

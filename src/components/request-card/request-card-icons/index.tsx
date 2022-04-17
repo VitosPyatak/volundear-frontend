@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { IconEnum } from 'types/icons';
+import { IconEnum, requestCategoryIconsMapping, requestStatusIconsMapping } from 'types/icons';
 import { SimpleIconSwitch } from 'uikit/simple-icon-switch';
 import { RequestCardIconsProps } from './types';
 import classes from './styles.module.scss';
@@ -16,7 +16,7 @@ export const RequestCardIcons: FC<RequestCardIconsProps> = ({ request }) => {
 
   return (
     <div className={classes.container}>
-      <SimpleIconSwitch icons={[IconEnum.paw, IconEnum.check]} />
+      <SimpleIconSwitch icons={[requestCategoryIconsMapping[request.category], requestStatusIconsMapping[request.status]]} />
       <SimpleButton onClick={onButtonClicked} title='Details' />
     </div>
   );
