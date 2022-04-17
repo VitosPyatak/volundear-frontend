@@ -10,17 +10,21 @@ import { userHttpProvider } from 'api/user-provider';
 import { UserModel } from 'models/user';
 import { RequestModel } from 'models/request';
 import { userRequestHttpProvider } from 'api/search-provider';
+import { useParams } from 'react-router-dom';
 
 const Account = () => {
   const [account, setAccount] = useState<UserModel>();
   const [requests, setRequests] = useState<RequestModel[]>();
 
+  const { accountId } = useParams();
+
   useEffect(() => {
-    userHttpProvider.getById(selfUserId).then((response) => {
+    const accountRequestId = accountId || selfUserId;
+    userHttpProvider.getById(accountRequestId).then((response) => {
       setAccount(response);
     });
 
-    userRequestHttpProvider.getUserRequests(selfUserId).then((response) => {
+    userRequestHttpProvider.getUserRequests(accountRequestId).then((response) => {
       setRequests(response);
     });
   }, []);

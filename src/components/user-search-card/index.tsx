@@ -1,6 +1,8 @@
 import { UserCardProps } from 'components/user-card/types';
+import { appRoutes } from 'configs/routes';
 import { Size } from 'configs/size.types';
 import { FC, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { IconEnum } from 'types/icons';
 import { SimpleButton } from 'uikit/buttons/simple';
 import { CardDescription } from 'uikit/card-description';
@@ -14,6 +16,12 @@ import classes from './styles.module.scss';
 export const UserSearchCard: FC<UserCardProps> = ({ user }) => {
   const icon = useMemo(() => (user.isVerified ? IconEnum.verified : IconEnum.unverified), []);
 
+  const navigate = useNavigate();
+
+  const onUserProfileDetailsClicked = () => {
+    navigate(appRoutes.extendedAccount.template(user._id));
+  };
+
   return (
     <CardWrapper horizontal>
       <CardImage size={Size.medium} url={user.profilePicture} />
@@ -22,7 +30,7 @@ export const UserSearchCard: FC<UserCardProps> = ({ user }) => {
         <CardDescription title={user.description} />
       </div>
       <div className={classes.button}>
-        <SimpleButton onClick={() => {}} title={userSearchButtonText} />
+        <SimpleButton onClick={onUserProfileDetailsClicked} title={userSearchButtonText} />
       </div>
     </CardWrapper>
   );

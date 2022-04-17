@@ -13,6 +13,7 @@ export const App = () => {
         <Routes>
           <Route path={appRoutes.home} element={Home} />
           <Route path={appRoutes.account} element={Account} />
+          <Route path={appRoutes.extendedAccount.path} element={Account} />
           <Route path={appRoutes.search} element={Search} />
           <Route path={appRoutes.extended.path} element={ExtendedRequest} />
         </Routes>
