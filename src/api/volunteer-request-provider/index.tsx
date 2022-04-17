@@ -1,5 +1,6 @@
 import { HttpProvider } from 'api/http-provider';
 import { appVariables } from 'configs';
+import { RequestModel } from 'models/request';
 import { GetRequestsResponseDTO, GetVolunteerRequestsQuery } from './types';
 
 class VolunteerRequestHttpProvider extends HttpProvider {
@@ -9,6 +10,10 @@ class VolunteerRequestHttpProvider extends HttpProvider {
 
   public getRequests = ({ limit, page }: GetVolunteerRequestsQuery) => {
     return this.get<GetRequestsResponseDTO>('/volunteer-request', { query: new URLSearchParams({ limit, page }) });
+  };
+
+  public getById = (id: string) => {
+    return this.get<RequestModel>(`/volunteer-request/${id}`);
   };
 }
 

@@ -14,7 +14,7 @@ export const AssigneesCard: FC<AssigneesProps> = ({ request }) => {
       <CardTitle title='Assignees' />
 
       <div className={classes.assignees}>
-        {request.assignees.map((assignee) => (
+        {request?.assignees?.map((assignee) => (
           <div className={classes.user}>
             <CardImage url={assignee.profilePicture} />
             <CardText text={formatUsername(assignee)} icon={IconEnum.verified} />
