@@ -1,5 +1,5 @@
-import { CommentModel } from 'models/comment';
+import { RequestModel } from 'models/request';
 
 export type CommentsCardProps = {
-  comments: CommentModel[];
+  request: RequestModel;
 };

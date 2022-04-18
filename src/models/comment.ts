@@ -5,6 +5,7 @@ export type CommentModel<U = UserModel> = {
   text: string;
   sender: U;
   request: string;
+  createdAt?: string;
 };
 
 export type CommentCallback = (comment: CommentModel) => void;

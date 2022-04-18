@@ -9,7 +9,7 @@ import { SuperimposedSubtitle } from '../../uikit/superimposed-subtitle';
 import { formatUsername } from 'utils/formatUsername';
 import { mockedDate } from './mock';
 import { RequestCardIcons } from './request-card-icons';
-import { formatRequestDate } from 'utils/formatRequestDate';
+import { formatRequestDate } from 'utils/formatDate';
 
 export const RequestCard: FC<RequestCardProps> = ({ request, size }) => {
   return (

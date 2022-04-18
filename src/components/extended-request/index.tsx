@@ -2,6 +2,7 @@ import { volunteerRequestHttpProvider } from 'api/volunteer-request-provider';
 import { AssigneesCard } from 'components/assignees-card';
 import { CommentsCard } from 'components/comments-card';
 import { ExtendedRequestCard } from 'components/extended-request-card';
+import { CommentsContext, CommentsProvider } from 'context/comments';
 import { useCurrentUser } from 'context/current-user';
 import { withHeading } from 'hoc/with-heading';
 import { RequestModel } from 'models/request';
@@ -19,9 +20,7 @@ const ExtendedRequest: FC = () => {
 
   useEffect(() => {
     if (requestId) {
-      volunteerRequestHttpProvider.getById(requestId).then((response) => {
-        setRequest(response);
-      });
+      volunteerRequestHttpProvider.getById(requestId).then(setRequest);
     }
   }, []);
 
@@ -38,7 +37,9 @@ const ExtendedRequest: FC = () => {
         <>
           <div className={classes.requestAndChatContainer}>
             <ExtendedRequestCard addRequestAssignee={addAssignee} request={request} />
-            <CommentsCard comments={mockComments} />
+            <CommentsProvider>
+              <CommentsCard request={request} />
+            </CommentsProvider>
           </div>
           <div className={classes.assignees}>
             <AssigneesCard request={request} />

@@ -16,7 +16,10 @@ export const RequestCardIcons: FC<RequestCardIconsProps> = ({ request }) => {
 
   return (
     <div className={classes.container}>
-      <SimpleIconSwitch icons={[requestCategoryIconsMapping[request.category], requestStatusIconsMapping[request.status]]} />
+      <SimpleIconSwitch
+        withTooltip
+        icons={[requestCategoryIconsMapping[request.category], requestStatusIconsMapping[request.status]]}
+      />
       <SimpleButton onClick={onButtonClicked} title='Details' />
     </div>
   );

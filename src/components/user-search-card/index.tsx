@@ -10,12 +10,11 @@ import { CardImage } from 'uikit/card-image';
 import { CardTitle } from 'uikit/card-title';
 import { CardWrapper } from 'uikit/card-wrapper';
 import { formatUsername } from 'utils/formatUsername';
+import { getVerificationIcon } from 'utils/getVerificationIcon';
 import { userSearchButtonText } from './configs';
 import classes from './styles.module.scss';
 
 export const UserSearchCard: FC<UserCardProps> = ({ user }) => {
-  const icon = useMemo(() => (user.isVerified ? IconEnum.verified : IconEnum.unverified), []);
-
   const navigate = useNavigate();
 
   const onUserProfileDetailsClicked = () => {
@@ -26,7 +25,7 @@ export const UserSearchCard: FC<UserCardProps> = ({ user }) => {
     <CardWrapper horizontal>
       <CardImage size={Size.medium} url={user.profilePicture} />
       <div className={classes.infoContainer}>
-        <CardTitle title={formatUsername(user)} icon={icon} />
+        <CardTitle title={formatUsername(user)} icon={getVerificationIcon(user)} />
         <CardDescription title={user.description} />
       </div>
       <div className={classes.button}>

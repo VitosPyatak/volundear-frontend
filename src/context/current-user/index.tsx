@@ -12,9 +12,7 @@ export const CurrentUserProvider: FC = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<UserModel>();
 
   useEffect(() => {
-    userHttpProvider.getById(selfUserId).then((response) => {
-      setCurrentUser(response);
-    });
+    userHttpProvider.getById(selfUserId).then(setCurrentUser);
   }, []);
 
   return <CurrentUserContext.Provider value={{ currentUser: currentUser! }}>{children}</CurrentUserContext.Provider>;

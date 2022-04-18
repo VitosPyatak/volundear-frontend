@@ -7,8 +7,8 @@ import { SuperimposedSubtitle } from 'uikit/superimposed-subtitle';
 import { formatUsername } from 'utils/formatUsername';
 import { SimpleButton } from 'uikit/buttons/simple';
 import { OutlinedIconsSwitch } from 'uikit/outlined-icons-switch';
-import { IconEnum } from 'types/icons';
-import { formatRequestDate } from 'utils/formatRequestDate';
+import { requestCategoryIconsMapping, requestStatusIconsMapping } from 'types/icons';
+import { formatRequestDate } from 'utils/formatDate';
 
 export const ExtendedRequestCard: FC<ExtendedRequestCardProps> = ({ request, addRequestAssignee }) => {
   return (
@@ -19,7 +19,7 @@ export const ExtendedRequestCard: FC<ExtendedRequestCardProps> = ({ request, add
           <SuperimposedSubtitle title={formatUsername(request.owner)} subtitle='Created by' horizontal large />
           <SuperimposedSubtitle title={formatRequestDate(request.createdAt)} subtitle='Date' horizontal large />
         </div>
-        <OutlinedIconsSwitch icons={[IconEnum.paw, IconEnum.check]} />
+        <OutlinedIconsSwitch icons={[requestCategoryIconsMapping[request.category], requestStatusIconsMapping[request.status]]} />
       </div>
 
       <SuperimposedSubtitle large title={request.description} />

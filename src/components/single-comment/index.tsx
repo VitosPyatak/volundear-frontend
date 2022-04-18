@@ -7,6 +7,7 @@ import { CardText } from 'uikit/card-text';
 import { formatUsername } from 'utils/formatUsername';
 import { SuperimposedSubtitle } from 'uikit/superimposed-subtitle';
 import { CardDescription } from 'uikit/card-description';
+import { formatRequestDate } from 'utils/formatDate';
 
 export const SingleComment: FC<SingleCommentProps> = ({ comment }) => {
   return (
@@ -17,7 +18,7 @@ export const SingleComment: FC<SingleCommentProps> = ({ comment }) => {
       <div className={classes.contentContainer}>
         <div className={classes.subheaderContainer}>
           <CardText text={formatUsername(comment.sender)} />
-          <CardDescription title='16.04.22' />
+          <CardDescription title={formatRequestDate(comment.createdAt)} />
         </div>
         <SuperimposedSubtitle title={comment.text} large />
       </div>

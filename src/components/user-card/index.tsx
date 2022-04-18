@@ -7,9 +7,8 @@ import { CardWrapper } from 'uikit/card-wrapper';
 import { formatUsername } from 'utils/formatUsername';
 import { UserCardProps } from './types';
 import { EditIcon } from 'uikit/icons/edit.icons';
-import { VerifiedIcon } from 'uikit/icons/verified.icon';
 import { SuperimposedSubtitle } from 'uikit/superimposed-subtitle';
-import { IconEnum } from 'types/icons';
+import { getVerificationIcon } from 'utils/getVerificationIcon';
 
 export const UserCard: FC<UserCardProps> = ({ user }) => {
   return (
@@ -20,7 +19,7 @@ export const UserCard: FC<UserCardProps> = ({ user }) => {
           <EditIcon />
         </div>
 
-        <CardTitle size={Size.large} title={formatUsername(user)} icon={IconEnum.verified} />
+        <CardTitle size={Size.large} title={formatUsername(user)} icon={getVerificationIcon(user)} />
 
         <SuperimposedSubtitle large subtitle='Phone number' title={user.phoneNumber} />
 
