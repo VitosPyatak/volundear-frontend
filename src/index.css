@@ -17,3 +17,12 @@ code {
 *::-webkit-scrollbar {
   display: none;
 }
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

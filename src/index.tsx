@@ -5,12 +5,15 @@ import App from './app';
 import reportWebVitals from './reportWebVitals';
 import { SocketProvider } from 'context/socket';
 import { SearchProvider } from 'context/search';
+import { CurrentUserProvider } from 'context/current-user';
 
 ReactDOM.render(
   <React.StrictMode>
     <SocketProvider>
       <SearchProvider>
-        <App />
+        <CurrentUserProvider>
+          <App />
+        </CurrentUserProvider>
       </SearchProvider>
     </SocketProvider>
   </React.StrictMode>,

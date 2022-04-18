@@ -8,15 +8,16 @@ import { formatUsername } from 'utils/formatUsername';
 import { SimpleButton } from 'uikit/buttons/simple';
 import { OutlinedIconsSwitch } from 'uikit/outlined-icons-switch';
 import { IconEnum } from 'types/icons';
+import { formatRequestDate } from 'utils/formatRequestDate';
 
-export const ExtendedRequestCard: FC<ExtendedRequestCardProps> = ({ request }) => {
+export const ExtendedRequestCard: FC<ExtendedRequestCardProps> = ({ request, addRequestAssignee }) => {
   return (
     <CardWrapper largePadding>
       <CardTitle title={request.title} />
       <div className={classes.requestDataContainer}>
         <div className={classes.dateAndOwnerContainer}>
           <SuperimposedSubtitle title={formatUsername(request.owner)} subtitle='Created by' horizontal large />
-          <SuperimposedSubtitle title={'16.04.22'} subtitle='Date' horizontal large />
+          <SuperimposedSubtitle title={formatRequestDate(request.createdAt)} subtitle='Date' horizontal large />
         </div>
         <OutlinedIconsSwitch icons={[IconEnum.paw, IconEnum.check]} />
       </div>
@@ -24,7 +25,7 @@ export const ExtendedRequestCard: FC<ExtendedRequestCardProps> = ({ request }) =
       <SuperimposedSubtitle large title={request.description} />
 
       <div className={classes.buttonContainer}>
-        <SimpleButton large title='Apply' onClick={() => {}} />
+        <SimpleButton large title='Apply' onClick={addRequestAssignee} />
       </div>
     </CardWrapper>
   );

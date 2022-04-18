@@ -15,6 +15,10 @@ class VolunteerRequestHttpProvider extends HttpProvider {
   public getById = (id: string) => {
     return this.get<RequestModel>(`/volunteer-request/${id}`);
   };
+
+  public addAssignee = (requestId: string, userId: string) => {
+    return this.put(`/volunteer-request/${requestId}/assignee/add`, { body: { id: userId } });
+  };
 }
 
 export const volunteerRequestHttpProvider = new VolunteerRequestHttpProvider();

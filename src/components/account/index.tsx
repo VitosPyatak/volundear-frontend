@@ -11,23 +11,26 @@ import { UserModel } from 'models/user';
 import { RequestModel } from 'models/request';
 import { userRequestHttpProvider } from 'api/search-provider';
 import { useParams } from 'react-router-dom';
+import { useCurrentUser } from 'context/current-user';
 
 const Account = () => {
   const [account, setAccount] = useState<UserModel>();
   const [requests, setRequests] = useState<RequestModel[]>();
 
   const { accountId } = useParams();
+  const { currentUser } = useCurrentUser();
 
   useEffect(() => {
-    const accountRequestId = accountId || selfUserId;
-    userHttpProvider.getById(accountRequestId).then((response) => {
-      setAccount(response);
-    });
-
-    userRequestHttpProvider.getUserRequests(accountRequestId).then((response) => {
-      setRequests(response);
-    });
-  }, []);
+    if (currentUser) {
+      if (!accountId || currentUser._id === accountId) {
+        setAccount(currentUser);
+        userRequestHttpProvider.getUserRequests(currentUser._id).then(setRequests);
+      } else if (accountId) {
+        userHttpProvider.getById(accountId).then(setAccount);
+        userRequestHttpProvider.getUserRequests(accountId).then(setRequests);
+      }
+    }
+  }, [currentUser?._id]);
 
   return (
     <div className={classes.container}>
