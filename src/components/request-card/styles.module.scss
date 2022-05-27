@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.subinfoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

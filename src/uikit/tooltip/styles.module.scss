@@ -1,0 +1,32 @@
+$tooltip-margin: 1.8rem;
+
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  white-space: nowrap;
+  background-color: black;
+  color: white;
+  transform: translateX(-50%);
+  border-radius: 0.4rem;
+  left: 50%;
+  padding: 0.4rem;
+  font-size: 0.8rem;
+  line-height: 1;
+  z-index: 100;
+  top: calc($tooltip-margin * -1);
+}
+
+.tooltip::before {
+  left: 50%;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-width: $tooltip-margin;
+  margin-left: calc($tooltip-margin * -1);
+}

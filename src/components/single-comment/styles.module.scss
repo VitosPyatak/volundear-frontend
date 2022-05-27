@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  gap: 1rem;
+}
+
+.imageContainer {
+  width: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.contentContainer {
+  width: 94%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.subheaderContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

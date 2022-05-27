@@ -1,0 +1,23 @@
+@import 'variables';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $accent;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  height: fit-content;
+}
+
+.title {
+  color: $accent-button;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.largeTitle {
+  @extend .title;
+  font-size: 1.1rem;
+}

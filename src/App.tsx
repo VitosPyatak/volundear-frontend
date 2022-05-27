@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from 'components/home';
+import { NavigationLayout } from 'uikit/layouts/navigation-layout';
+import { appRoutes } from 'configs/routes';
+import Search from 'components/search';
+import Account from 'components/account';
+import ExtendedRequest from 'components/extended-request';
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavigationLayout>
+        <Routes>
+          <Route path={appRoutes.home} element={Home} />
+          <Route path={appRoutes.account} element={Account} />
+          <Route path={appRoutes.extendedAccount.path} element={Account} />
+          <Route path={appRoutes.search} element={Search} />
+          <Route path={appRoutes.extended.path} element={ExtendedRequest} />
+        </Routes>
+      </NavigationLayout>
+    </Router>
   );
-}
+};
 
 export default App;
